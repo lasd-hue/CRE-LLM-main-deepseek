@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# 日志与临时文件
+nohup.out
+*.log
+=4.37.0
+GW050628czd
+GW050628czd.pub
+
+# 环境变量
+.env
+
+# 系统
+.DS_Store
+Thumbs.db
