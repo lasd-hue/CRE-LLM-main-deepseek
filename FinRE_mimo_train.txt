@@ -1,0 +1,778 @@
+--stage：未找到命令
+--stage：未找到命令
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/12/2025 16:29:49 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-12 16:29:49,716 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-12 16:29:49,716 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/12/2025 16:29:49 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: torch.float16
+10/12/2025 16:29:49 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=4,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo/runs/Oct12_16-29-49_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=5.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+predict_with_generate=False,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/12/2025 16:29:49 - INFO - llmtuner.dsets.loader - Loading dataset FinRE/train_dynamic_fixed_v2.json...
+10/12/2025 16:29:49 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-4ccee8af28fa7c31
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Traceback (most recent call last):
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 14, in <module>
+    main()
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/tune.py", line 26, in run_exp
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/sft/workflow.py", line 28, in run_sft
+    model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="sft")
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/loader.py", line 71, in load_model_and_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 748, in from_pretrained
+    raise ValueError(
+ValueError: Tokenizer class Qwen2Tokenizer does not exist or is not currently imported.
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/12/2025 16:32:03 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-12 16:32:03,602 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-12 16:32:03,603 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/12/2025 16:32:03 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: torch.float16
+10/12/2025 16:32:03 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=4,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo/runs/Oct12_16-32-03_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=5.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+predict_with_generate=False,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/12/2025 16:32:03 - INFO - llmtuner.dsets.loader - Loading dataset FinRE/train_dynamic_fixed_v2.json...
+10/12/2025 16:32:03 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-4ccee8af28fa7c31
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Traceback (most recent call last):
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 14, in <module>
+    main()
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/tune.py", line 26, in run_exp
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/sft/workflow.py", line 28, in run_sft
+    model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="sft")
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/loader.py", line 71, in load_model_and_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 748, in from_pretrained
+    raise ValueError(
+ValueError: Tokenizer class Qwen2Tokenizer does not exist or is not currently imported.
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+Traceback (most recent call last):
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 14, in <module>
+    main()
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/tune.py", line 20, in run_exp
+    model_args, data_args, training_args, finetuning_args, generating_args = get_train_args(args)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/parser.py", line 78, in get_train_args
+    model_args, data_args, training_args, finetuning_args, generating_args = parse_train_args(args)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/parser.py", line 49, in parse_train_args
+    return _parse_args(parser, args)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/parser.py", line 30, in _parse_args
+    return parser.parse_args_into_dataclasses()
+  File "/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/hf_argparser.py", line 347, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['--trust_remote_code']
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/12/2025 16:35:21 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-12 16:35:21,741 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-12 16:35:21,741 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/12/2025 16:35:21 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: torch.float16
+10/12/2025 16:35:21 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=4,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo/runs/Oct12_16-35-21_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=5.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+predict_with_generate=False,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/12/2025 16:35:21 - INFO - llmtuner.dsets.loader - Loading dataset FinRE/train_dynamic_fixed_v2.json...
+10/12/2025 16:35:21 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-4ccee8af28fa7c31
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Traceback (most recent call last):
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 14, in <module>
+    main()
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/tune.py", line 26, in run_exp
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/sft/workflow.py", line 28, in run_sft
+    model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="sft")
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/loader.py", line 71, in load_model_and_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 748, in from_pretrained
+    raise ValueError(
+ValueError: Tokenizer class Qwen2Tokenizer does not exist or is not currently imported.
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/12/2025 16:45:10 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-12 16:45:10,753 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-12 16:45:10,753 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/12/2025 16:45:10 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: torch.float16
+10/12/2025 16:45:10 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=4,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo/runs/Oct12_16-45-10_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=5.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+predict_with_generate=False,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/12/2025 16:45:10 - INFO - llmtuner.dsets.loader - Loading dataset FinRE/train_dynamic_fixed_v2.json...
+10/12/2025 16:45:10 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-4ccee8af28fa7c31
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Traceback (most recent call last):
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 14, in <module>
+    main()
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/tune.py", line 26, in run_exp
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/sft/workflow.py", line 28, in run_sft
+    model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="sft")
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/loader.py", line 71, in load_model_and_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+TypeError: transformers.models.auto.tokenization_auto.AutoTokenizer.from_pretrained() got multiple values for keyword argument 'trust_remote_code'
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/12/2025 16:49:05 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-12 16:49:05,292 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-12 16:49:05,292 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/12/2025 16:49:05 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: torch.float16
+10/12/2025 16:49:05 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=4,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo/runs/Oct12_16-49-05_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_type=cosine,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=5.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+predict_with_generate=False,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/checkpoints/finre_mimo,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=1000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/12/2025 16:49:05 - INFO - llmtuner.dsets.loader - Loading dataset FinRE/train_dynamic_fixed_v2.json...
+10/12/2025 16:49:05 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-4ccee8af28fa7c31
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4ccee8af28fa7c31/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Traceback (most recent call last):
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 14, in <module>
+    main()
+  File "/home/chenzhidan/CRE-LLM-main/src/train_bash.py", line 5, in main
+    run_exp()
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/tune.py", line 26, in run_exp
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/sft/workflow.py", line 28, in run_sft
+    model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="sft")
+  File "/home/chenzhidan/CRE-LLM-main/src/llmtuner/tuner/core/loader.py", line 71, in load_model_and_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 748, in from_pretrained
+    raise ValueError(
+ValueError: Tokenizer class Qwen2Tokenizer does not exist or is not currently imported.

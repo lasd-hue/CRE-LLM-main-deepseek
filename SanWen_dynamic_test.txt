@@ -1,0 +1,703 @@
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/11/2025 15:00:34 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-11 15:00:34,712 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-11 15:00:34,712 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/11/2025 15:00:34 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: None
+10/11/2025 15:00:34 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=True,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic/runs/Oct11_15-00-34_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=1,
+per_device_train_batch_size=8,
+predict_with_generate=True,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/11/2025 15:00:34 - INFO - llmtuner.dsets.loader - Loading dataset SanWen/test.json...
+10/11/2025 15:00:34 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-4dd7dcffb9227156
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 15:00:35,428 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 15:00:35,428 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 15:00:35,428 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 15:00:35,428 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 15:00:35,428 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:713] 2025-10-11 15:00:35,517 >> loading configuration file /home/chenzhidan/deepseek-llm-7b-base/config.json
+[INFO|configuration_utils.py:775] 2025-10-11 15:00:35,518 >> Model config LlamaConfig {
+  "_name_or_path": "/home/chenzhidan/deepseek-llm-7b-base",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 30,
+  "num_key_value_heads": 32,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.34.0",
+  "use_cache": true,
+  "vocab_size": 102400
+}
+
+[INFO|modeling_utils.py:2990] 2025-10-11 15:00:35,530 >> loading weights file /home/chenzhidan/deepseek-llm-7b-base/pytorch_model.bin.index.json
+[INFO|modeling_utils.py:1220] 2025-10-11 15:00:35,530 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:770] 2025-10-11 15:00:35,531 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.35s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.36s/it]
+[INFO|modeling_utils.py:3775] 2025-10-11 15:00:40,303 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+[INFO|modeling_utils.py:3783] 2025-10-11 15:00:40,303 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /home/chenzhidan/deepseek-llm-7b-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:728] 2025-10-11 15:00:40,305 >> loading configuration file /home/chenzhidan/deepseek-llm-7b-base/generation_config.json
+[INFO|configuration_utils.py:770] 2025-10-11 15:00:40,305 >> Generate config GenerationConfig {
+  "bos_token_id": 100000,
+  "eos_token_id": 100001
+}
+
+10/11/2025 15:00:40 - INFO - llmtuner.tuner.core.adapter - Fine-tuning method: LoRA
+10/11/2025 15:00:45 - INFO - llmtuner.tuner.core.adapter - Merged 1 model checkpoint(s).
+10/11/2025 15:00:45 - INFO - llmtuner.tuner.core.adapter - Loaded fine-tuned model from checkpoint(s): /home/chenzhidan/deepseek/checkpoints/ds_sanwen_dynamic
+10/11/2025 15:00:45 - INFO - llmtuner.tuner.core.loader - trainable params: 0 || all params: 6910365696 || trainable%: 0.0000
+10/11/2025 15:00:45 - INFO - llmtuner.tuner.core.loader - This IS expected that the trainable params is 0 if you are using model for inference only.
+[INFO|tokenization_utils_base.py:952] 2025-10-11 15:00:45,864 >> Assigning [] to the additional_special_tokens key of the tokenizer
+Loading cached processed dataset at /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-920dba6a875424f3.arrow
+Loading cached processed dataset at /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-1607898d49f13e37.arrow
+input_ids:
+[100000, 32, 12465, 1439, 245, 13076, 2677, 285, 274, 18050, 15141, 20308, 13, 429, 20308, 4380, 9394, 11, 9333, 11, 285, 30513, 9789, 276, 254, 2677, 6, 82, 4313, 13, 185, 38426, 25, 207, 4575, 6857, 2441, 1506, 8260, 67402, 28486, 13396, 3536, 1557, 7212, 185, 4575, 58, 1147, 60, 2477, 23316, 19304, 20822, 3344, 58, 6750, 81405, 60, 10867, 7977, 28778, 45326, 6698, 17398, 19403, 1147, 2717, 30, 21238, 6750, 81405, 5855, 185, 77398, 25, 207]
+inputs:
+<｜begin▁of▁sentence｜>A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.
+Human: 请根据给定句子和实体抽取其关系
+请[他]解惑，恰见[他的助手]正在纳闷：怎么啦 ([他],?,[他的助手])
+Assistant: 
+[INFO|training_args.py:1345] 2025-10-11 15:00:45,895 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-11 15:00:45,895 >> PyTorch: setting up devices
+[INFO|trainer.py:3213] 2025-10-11 15:00:47,235 >> ***** Running Prediction *****
+[INFO|trainer.py:3215] 2025-10-11 15:00:47,236 >>   Num examples = 100
+[INFO|trainer.py:3218] 2025-10-11 15:00:47,236 >>   Batch size = 1
+[WARNING|logging.py:290] 2025-10-11 15:00:47,237 >> You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[INFO|configuration_utils.py:770] 2025-10-11 15:00:47,244 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/generation/utils.py:1421: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+  warnings.warn(
+  0%|          | 0/100 [00:00<?, ?it/s]  2%|▏         | 2/100 [00:00<00:17,  5.56it/s]  3%|▎         | 3/100 [00:00<00:26,  3.69it/s]  4%|▍         | 4/100 [00:01<00:29,  3.29it/s]  5%|▌         | 5/100 [00:01<00:33,  2.87it/s]  6%|▌         | 6/100 [00:01<00:34,  2.74it/s]  7%|▋         | 7/100 [00:02<00:33,  2.75it/s]  8%|▊         | 8/100 [00:02<00:33,  2.75it/s]  9%|▉         | 9/100 [00:03<00:36,  2.52it/s] 10%|█         | 10/100 [00:03<00:41,  2.19it/s] 11%|█         | 11/100 [00:04<00:40,  2.22it/s] 12%|█▏        | 12/100 [00:04<00:37,  2.37it/s] 13%|█▎        | 13/100 [00:05<00:51,  1.70it/s] 14%|█▍        | 14/100 [00:06<00:55,  1.54it/s] 15%|█▌        | 15/100 [00:06<00:54,  1.56it/s] 16%|█▌        | 16/100 [00:07<00:51,  1.63it/s] 17%|█▋        | 17/100 [00:07<00:47,  1.75it/s] 18%|█▊        | 18/100 [00:08<00:46,  1.78it/s] 19%|█▉        | 19/100 [00:09<00:46,  1.75it/s] 20%|██        | 20/100 [00:09<00:50,  1.58it/s] 21%|██        | 21/100 [00:10<00:47,  1.65it/s] 22%|██▏       | 22/100 [00:10<00:43,  1.80it/s] 23%|██▎       | 23/100 [00:11<00:43,  1.76it/s] 24%|██▍       | 24/100 [00:11<00:40,  1.86it/s] 25%|██▌       | 25/100 [00:12<00:40,  1.85it/s] 26%|██▌       | 26/100 [00:12<00:36,  2.01it/s] 27%|██▋       | 27/100 [00:13<00:35,  2.04it/s] 28%|██▊       | 28/100 [00:14<00:39,  1.80it/s] 29%|██▉       | 29/100 [00:14<00:42,  1.67it/s] 30%|███       | 30/100 [00:15<00:42,  1.65it/s] 31%|███       | 31/100 [00:15<00:37,  1.84it/s] 32%|███▏      | 32/100 [00:16<00:38,  1.76it/s] 33%|███▎      | 33/100 [00:16<00:34,  1.94it/s] 34%|███▍      | 34/100 [00:17<00:31,  2.08it/s] 35%|███▌      | 35/100 [00:17<00:29,  2.20it/s] 36%|███▌      | 36/100 [00:17<00:27,  2.35it/s] 37%|███▋      | 37/100 [00:18<00:32,  1.92it/s] 38%|███▊      | 38/100 [00:19<00:33,  1.85it/s] 39%|███▉      | 39/100 [00:19<00:35,  1.73it/s] 40%|████      | 40/100 [00:20<00:32,  1.83it/s] 41%|████      | 41/100 [00:20<00:29,  2.00it/s] 42%|████▏     | 42/100 [00:21<00:27,  2.08it/s] 43%|████▎     | 43/100 [00:21<00:26,  2.14it/s] 44%|████▍     | 44/100 [00:22<00:26,  2.13it/s] 45%|████▌     | 45/100 [00:22<00:26,  2.08it/s] 46%|████▌     | 46/100 [00:23<00:24,  2.19it/s] 47%|████▋     | 47/100 [00:23<00:23,  2.28it/s] 48%|████▊     | 48/100 [00:23<00:22,  2.28it/s] 49%|████▉     | 49/100 [00:24<00:22,  2.29it/s] 50%|█████     | 50/100 [00:24<00:20,  2.42it/s] 51%|█████     | 51/100 [00:25<00:20,  2.45it/s] 52%|█████▏    | 52/100 [00:25<00:21,  2.22it/s] 53%|█████▎    | 53/100 [00:26<00:20,  2.24it/s] 54%|█████▍    | 54/100 [00:26<00:19,  2.37it/s] 55%|█████▌    | 55/100 [00:26<00:18,  2.40it/s] 56%|█████▌    | 56/100 [00:27<00:20,  2.19it/s] 57%|█████▋    | 57/100 [00:27<00:20,  2.05it/s] 58%|█████▊    | 58/100 [00:28<00:20,  2.02it/s] 59%|█████▉    | 59/100 [00:28<00:19,  2.14it/s] 60%|██████    | 60/100 [00:29<00:18,  2.18it/s] 61%|██████    | 61/100 [00:29<00:17,  2.21it/s] 62%|██████▏   | 62/100 [00:30<00:16,  2.30it/s] 63%|██████▎   | 63/100 [00:30<00:15,  2.36it/s] 64%|██████▍   | 64/100 [00:30<00:14,  2.41it/s] 65%|██████▌   | 65/100 [00:31<00:14,  2.44it/s] 66%|██████▌   | 66/100 [00:31<00:14,  2.40it/s] 67%|██████▋   | 67/100 [00:32<00:13,  2.51it/s] 68%|██████▊   | 68/100 [00:32<00:13,  2.38it/s] 69%|██████▉   | 69/100 [00:32<00:12,  2.48it/s] 70%|███████   | 70/100 [00:33<00:13,  2.29it/s] 71%|███████   | 71/100 [00:33<00:12,  2.30it/s] 72%|███████▏  | 72/100 [00:34<00:13,  2.07it/s] 73%|███████▎  | 73/100 [00:35<00:14,  1.85it/s] 74%|███████▍  | 74/100 [00:35<00:13,  1.92it/s] 75%|███████▌  | 75/100 [00:36<00:13,  1.85it/s] 76%|███████▌  | 76/100 [00:36<00:12,  1.96it/s] 77%|███████▋  | 77/100 [00:37<00:11,  2.05it/s] 78%|███████▊  | 78/100 [00:37<00:10,  2.18it/s] 79%|███████▉  | 79/100 [00:38<00:10,  1.92it/s] 80%|████████  | 80/100 [00:38<00:11,  1.77it/s] 81%|████████  | 81/100 [00:39<00:11,  1.71it/s] 82%|████████▏ | 82/100 [00:40<00:10,  1.64it/s] 83%|████████▎ | 83/100 [00:41<00:13,  1.29it/s] 84%|████████▍ | 84/100 [00:41<00:11,  1.34it/s] 85%|████████▌ | 85/100 [00:42<00:09,  1.50it/s] 86%|████████▌ | 86/100 [00:42<00:08,  1.56it/s] 87%|████████▋ | 87/100 [00:43<00:08,  1.62it/s] 88%|████████▊ | 88/100 [00:44<00:07,  1.64it/s] 89%|████████▉ | 89/100 [00:44<00:06,  1.63it/s] 90%|█████████ | 90/100 [00:45<00:06,  1.65it/s] 91%|█████████ | 91/100 [00:45<00:05,  1.76it/s] 92%|█████████▏| 92/100 [00:46<00:04,  1.89it/s] 93%|█████████▎| 93/100 [00:46<00:03,  1.99it/s] 94%|█████████▍| 94/100 [00:47<00:03,  1.77it/s] 95%|█████████▌| 95/100 [00:47<00:02,  1.94it/s] 96%|█████████▌| 96/100 [00:48<00:02,  1.90it/s] 97%|█████████▋| 97/100 [00:48<00:01,  1.87it/s] 98%|█████████▊| 98/100 [00:49<00:01,  1.81it/s] 99%|█████████▉| 99/100 [00:49<00:00,  1.89it/s]100%|██████████| 100/100 [00:50<00:00,  2.09it/s]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.368 seconds.
+Prefix dict has been built successfully.
+100%|██████████| 100/100 [00:50<00:00,  1.97it/s]
+***** predict metrics *****
+  predict_bleu-4             =    93.9964
+  predict_rouge-1            =    98.3825
+  predict_rouge-2            =    97.5406
+  predict_rouge-l            =    98.4557
+  predict_runtime            = 0:00:51.35
+  predict_samples_per_second =      1.947
+  predict_steps_per_second   =      1.947
+10/11/2025 15:01:38 - INFO - llmtuner.tuner.sft.trainer - Saving prediction results to /home/chenzhidan/deepseek/results/ds_sanwen_dynamic/generated_predictions.jsonl
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/11/2025 21:48:40 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-11 21:48:40,039 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-11 21:48:40,039 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/11/2025 21:48:40 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: None
+10/11/2025 21:48:40 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=True,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic/runs/Oct11_21-48-40_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=1,
+per_device_train_batch_size=8,
+predict_with_generate=True,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/11/2025 21:48:40 - INFO - llmtuner.dsets.loader - Loading dataset SanWen/train_dynamic_fixed_v2.json...
+10/11/2025 21:48:40 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-60c6bb4f30b69926
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-60c6bb4f30b69926/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-60c6bb4f30b69926/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-60c6bb4f30b69926/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 21:48:40,770 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 21:48:40,770 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 21:48:40,770 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 21:48:40,770 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 21:48:40,770 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:713] 2025-10-11 21:48:40,848 >> loading configuration file /home/chenzhidan/deepseek-llm-7b-base/config.json
+[INFO|configuration_utils.py:775] 2025-10-11 21:48:40,848 >> Model config LlamaConfig {
+  "_name_or_path": "/home/chenzhidan/deepseek-llm-7b-base",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 30,
+  "num_key_value_heads": 32,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.34.0",
+  "use_cache": true,
+  "vocab_size": 102400
+}
+
+[INFO|modeling_utils.py:2990] 2025-10-11 21:48:40,859 >> loading weights file /home/chenzhidan/deepseek-llm-7b-base/pytorch_model.bin.index.json
+[INFO|modeling_utils.py:1220] 2025-10-11 21:48:40,859 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:770] 2025-10-11 21:48:40,859 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.37s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.20s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.37s/it]
+[INFO|modeling_utils.py:3775] 2025-10-11 21:48:45,683 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+[INFO|modeling_utils.py:3783] 2025-10-11 21:48:45,683 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /home/chenzhidan/deepseek-llm-7b-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:728] 2025-10-11 21:48:45,685 >> loading configuration file /home/chenzhidan/deepseek-llm-7b-base/generation_config.json
+[INFO|configuration_utils.py:770] 2025-10-11 21:48:45,685 >> Generate config GenerationConfig {
+  "bos_token_id": 100000,
+  "eos_token_id": 100001
+}
+
+10/11/2025 21:48:45 - INFO - llmtuner.tuner.core.adapter - Fine-tuning method: LoRA
+10/11/2025 21:48:51 - INFO - llmtuner.tuner.core.adapter - Merged 1 model checkpoint(s).
+10/11/2025 21:48:51 - INFO - llmtuner.tuner.core.adapter - Loaded fine-tuned model from checkpoint(s): /home/chenzhidan/deepseek/checkpoints/ds_sanwen_dynamic
+10/11/2025 21:48:51 - INFO - llmtuner.tuner.core.loader - trainable params: 0 || all params: 6910365696 || trainable%: 0.0000
+10/11/2025 21:48:51 - INFO - llmtuner.tuner.core.loader - This IS expected that the trainable params is 0 if you are using model for inference only.
+[INFO|tokenization_utils_base.py:952] 2025-10-11 21:48:51,211 >> Assigning [] to the additional_special_tokens key of the tokenizer
+Filter:   0%|          | 0/100 [00:00<?, ? examples/s]Caching processed dataset at /home/chenzhidan/.cache/huggingface/datasets/json/default-60c6bb4f30b69926/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-6a3b02dc06fdd604.arrow
+Filter: 100%|██████████| 100/100 [00:00<00:00, 16541.66 examples/s]
+Running tokenizer on dataset:   0%|          | 0/100 [00:00<?, ? examples/s]Caching processed dataset at /home/chenzhidan/.cache/huggingface/datasets/json/default-60c6bb4f30b69926/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-5be1658687576328.arrow
+Running tokenizer on dataset: 100%|██████████| 100/100 [00:00<00:00, 2414.71 examples/s]
+input_ids:
+[100000, 32, 12465, 1439, 245, 13076, 2677, 285, 274, 18050, 15141, 20308, 13, 429, 20308, 4380, 9394, 11, 9333, 11, 285, 30513, 9789, 276, 254, 2677, 6, 82, 4313, 13, 185, 38426, 25, 207, 5277, 23440, 71356, 9266, 10900, 19304, 4575, 9266, 12534, 23440, 9668, 764, 28486, 1658, 30745, 45326, 185, 185, 71356, 45326, 790, 58, 26330, 8020, 60, 612, 58, 3010, 13175, 60, 19304, 1641, 1110, 22136, 4263, 398, 185, 9266, 18799, 45326, 58, 26330, 8020, 60, 207, 885, 825, 3010, 13175, 60, 185, 185, 4575, 1970, 23440, 18061, 9266, 20249, 537, 24972, 2322, 42115, 79959, 398, 7419, 45326, 3146, 7212, 573, 13756, 19304, 4575, 28277, 1, 25352, 1, 45326, 185, 790, 58, 26330, 8020, 60, 612, 58, 3010, 13175, 60, 19304, 1641, 1110, 22136, 4263, 398, 19403, 26330, 8020, 2717, 30, 21238, 3010, 13175, 5855, 185, 77398, 25, 207]
+inputs:
+<｜begin▁of▁sentence｜>A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.
+Human: 作为文学文本分析专家，请分析以下文学作品中实体间的关系：
+
+文本：“[幽兰]在[山谷]，本自无人识。
+分析对象：[幽兰] 和 [山谷]
+
+请从文学角度分析人物、地点或事物之间的关系。注意：如果关系不明确，请输出"unknown"：
+“[幽兰]在[山谷]，本自无人识。 ([幽兰],?,[山谷])
+Assistant: 
+[INFO|training_args.py:1345] 2025-10-11 21:48:51,290 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-11 21:48:51,290 >> PyTorch: setting up devices
+[INFO|trainer.py:3213] 2025-10-11 21:48:52,637 >> ***** Running Prediction *****
+[INFO|trainer.py:3215] 2025-10-11 21:48:52,637 >>   Num examples = 100
+[INFO|trainer.py:3218] 2025-10-11 21:48:52,637 >>   Batch size = 1
+[WARNING|logging.py:290] 2025-10-11 21:48:52,638 >> You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[INFO|configuration_utils.py:770] 2025-10-11 21:48:52,645 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/generation/utils.py:1421: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+  warnings.warn(
+  0%|          | 0/100 [00:00<?, ?it/s]  2%|▏         | 2/100 [00:00<00:18,  5.42it/s]  3%|▎         | 3/100 [00:00<00:31,  3.11it/s]  4%|▍         | 4/100 [00:01<00:33,  2.84it/s]  5%|▌         | 5/100 [00:01<00:35,  2.71it/s]  6%|▌         | 6/100 [00:02<00:39,  2.40it/s]  7%|▋         | 7/100 [00:02<00:40,  2.30it/s]  8%|▊         | 8/100 [00:03<00:37,  2.43it/s]  9%|▉         | 9/100 [00:03<00:37,  2.44it/s] 10%|█         | 10/100 [00:03<00:37,  2.39it/s] 11%|█         | 11/100 [00:04<00:36,  2.42it/s] 12%|█▏        | 12/100 [00:04<00:35,  2.50it/s] 13%|█▎        | 13/100 [00:05<00:34,  2.52it/s] 14%|█▍        | 14/100 [00:05<00:33,  2.58it/s] 15%|█▌        | 15/100 [00:05<00:33,  2.55it/s] 16%|█▌        | 16/100 [00:06<00:33,  2.53it/s] 17%|█▋        | 17/100 [00:06<00:33,  2.45it/s] 18%|█▊        | 18/100 [00:07<00:34,  2.39it/s] 19%|█▉        | 19/100 [00:07<00:35,  2.28it/s] 20%|██        | 20/100 [00:07<00:34,  2.34it/s] 21%|██        | 21/100 [00:08<00:33,  2.37it/s] 22%|██▏       | 22/100 [00:08<00:37,  2.10it/s] 23%|██▎       | 23/100 [00:09<00:39,  1.94it/s] 24%|██▍       | 24/100 [00:10<00:41,  1.84it/s] 25%|██▌       | 25/100 [00:10<00:37,  1.98it/s] 26%|██▌       | 26/100 [00:11<00:36,  2.00it/s] 27%|██▋       | 27/100 [00:11<00:37,  1.97it/s] 28%|██▊       | 28/100 [00:12<00:35,  2.04it/s] 29%|██▉       | 29/100 [00:12<00:34,  2.04it/s] 30%|███       | 30/100 [00:12<00:32,  2.15it/s] 31%|███       | 31/100 [00:13<00:35,  1.97it/s] 32%|███▏      | 32/100 [00:14<00:37,  1.79it/s] 33%|███▎      | 33/100 [00:14<00:34,  1.95it/s] 34%|███▍      | 34/100 [00:15<00:31,  2.09it/s] 35%|███▌      | 35/100 [00:15<00:28,  2.24it/s] 36%|███▌      | 36/100 [00:15<00:27,  2.37it/s] 37%|███▋      | 37/100 [00:16<00:25,  2.46it/s] 38%|███▊      | 38/100 [00:16<00:24,  2.53it/s] 39%|███▉      | 39/100 [00:16<00:23,  2.59it/s] 40%|████      | 40/100 [00:17<00:22,  2.62it/s] 41%|████      | 41/100 [00:17<00:22,  2.58it/s] 42%|████▏     | 42/100 [00:18<00:22,  2.57it/s] 43%|████▎     | 43/100 [00:18<00:24,  2.34it/s] 44%|████▍     | 44/100 [00:18<00:23,  2.39it/s] 45%|████▌     | 45/100 [00:19<00:22,  2.48it/s] 46%|████▌     | 46/100 [00:19<00:21,  2.47it/s] 47%|████▋     | 47/100 [00:20<00:21,  2.48it/s] 48%|████▊     | 48/100 [00:20<00:20,  2.54it/s] 49%|████▉     | 49/100 [00:21<00:21,  2.34it/s] 50%|█████     | 50/100 [00:21<00:22,  2.25it/s] 51%|█████     | 51/100 [00:21<00:21,  2.26it/s] 52%|█████▏    | 52/100 [00:22<00:22,  2.17it/s] 53%|█████▎    | 53/100 [00:22<00:22,  2.10it/s] 54%|█████▍    | 54/100 [00:23<00:22,  2.04it/s] 55%|█████▌    | 55/100 [00:24<00:23,  1.92it/s] 56%|█████▌    | 56/100 [00:24<00:27,  1.58it/s] 57%|█████▋    | 57/100 [00:25<00:30,  1.40it/s] 58%|█████▊    | 58/100 [00:26<00:26,  1.59it/s] 59%|█████▉    | 59/100 [00:26<00:24,  1.68it/s] 60%|██████    | 60/100 [00:27<00:22,  1.74it/s] 61%|██████    | 61/100 [00:27<00:21,  1.83it/s] 62%|██████▏   | 62/100 [00:28<00:21,  1.77it/s] 63%|██████▎   | 63/100 [00:29<00:21,  1.72it/s] 64%|██████▍   | 64/100 [00:29<00:21,  1.69it/s] 65%|██████▌   | 65/100 [00:30<00:20,  1.67it/s] 66%|██████▌   | 66/100 [00:30<00:20,  1.66it/s] 67%|██████▋   | 67/100 [00:31<00:18,  1.76it/s] 68%|██████▊   | 68/100 [00:31<00:18,  1.74it/s] 69%|██████▉   | 69/100 [00:32<00:16,  1.83it/s] 70%|███████   | 70/100 [00:33<00:16,  1.78it/s] 71%|███████   | 71/100 [00:33<00:14,  1.94it/s] 72%|███████▏  | 72/100 [00:34<00:15,  1.84it/s] 73%|███████▎  | 73/100 [00:34<00:15,  1.77it/s] 74%|███████▍  | 74/100 [00:35<00:13,  1.97it/s] 75%|███████▌  | 75/100 [00:35<00:12,  2.08it/s] 76%|███████▌  | 76/100 [00:35<00:10,  2.20it/s] 77%|███████▋  | 77/100 [00:36<00:12,  1.86it/s] 78%|███████▊  | 78/100 [00:37<00:16,  1.32it/s] 79%|███████▉  | 79/100 [00:38<00:14,  1.44it/s] 80%|████████  | 80/100 [00:39<00:14,  1.38it/s] 81%|████████  | 81/100 [00:39<00:13,  1.39it/s] 82%|████████▏ | 82/100 [00:40<00:12,  1.44it/s] 83%|████████▎ | 83/100 [00:41<00:10,  1.60it/s] 84%|████████▍ | 84/100 [00:41<00:09,  1.71it/s] 85%|████████▌ | 85/100 [00:41<00:08,  1.87it/s] 86%|████████▌ | 86/100 [00:42<00:07,  1.96it/s] 87%|████████▋ | 87/100 [00:42<00:06,  2.08it/s] 88%|████████▊ | 88/100 [00:43<00:05,  2.11it/s] 89%|████████▉ | 89/100 [00:43<00:05,  2.14it/s] 90%|█████████ | 90/100 [00:44<00:04,  2.07it/s] 91%|█████████ | 91/100 [00:44<00:05,  1.77it/s] 92%|█████████▏| 92/100 [00:45<00:04,  1.93it/s] 93%|█████████▎| 93/100 [00:45<00:03,  2.07it/s] 94%|█████████▍| 94/100 [00:46<00:03,  1.89it/s] 95%|█████████▌| 95/100 [00:46<00:02,  1.92it/s] 96%|█████████▌| 96/100 [00:47<00:02,  1.97it/s] 97%|█████████▋| 97/100 [00:47<00:01,  1.95it/s] 98%|█████████▊| 98/100 [00:48<00:01,  1.90it/s] 99%|█████████▉| 99/100 [00:49<00:00,  1.86it/s]100%|██████████| 100/100 [00:49<00:00,  1.91it/s]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.361 seconds.
+Prefix dict has been built successfully.
+100%|██████████| 100/100 [00:49<00:00,  2.00it/s]
+***** predict metrics *****
+  predict_bleu-4             =    98.9136
+  predict_rouge-1            =     99.875
+  predict_rouge-2            =    99.7412
+  predict_rouge-l            =    99.5629
+  predict_runtime            = 0:00:50.64
+  predict_samples_per_second =      1.974
+  predict_steps_per_second   =      1.974
+10/11/2025 21:49:43 - INFO - llmtuner.tuner.sft.trainer - Saving prediction results to /home/chenzhidan/deepseek/results/ds_sanwen_dynamic/generated_predictions.jsonl
+nohup: 忽略输入
+FlashAttention-2 is not installed, ignore this if you are not using FlashAttention.
+10/11/2025 22:04:11 - WARNING - llmtuner.tuner.core.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+[INFO|training_args.py:1345] 2025-10-11 22:04:11,195 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-11 22:04:11,195 >> PyTorch: setting up devices
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/training_args.py:1711: FutureWarning: `--push_to_hub_token` is deprecated and will be removed in version 5 of 🤗 Transformers. Use `--hub_token` instead.
+  warnings.warn(
+10/11/2025 22:04:11 - INFO - llmtuner.tuner.core.parser - Process rank: 0, device: cuda:0, n_gpu: 1
+  distributed training: True, compute dtype: None
+10/11/2025 22:04:11 - INFO - llmtuner.tuner.core.parser - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=False,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=True,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic/runs/Oct11_22-04-11_Ray,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_torch,
+optim_args=None,
+output_dir=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=1,
+per_device_train_batch_size=8,
+predict_with_generate=True,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/home/chenzhidan/deepseek/results/ds_sanwen_dynamic,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+10/11/2025 22:04:11 - INFO - llmtuner.dsets.loader - Loading dataset SanWen/test.json...
+10/11/2025 22:04:11 - WARNING - llmtuner.dsets.utils - Checksum failed: missing SHA-1 hash value in dataset_info.json.
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/load.py:2089: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=None' instead.
+  warnings.warn(
+Using custom data configuration default-4dd7dcffb9227156
+Loading Dataset Infos from /home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 22:04:11,919 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 22:04:11,919 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 22:04:11,919 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 22:04:11,919 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2041] 2025-10-11 22:04:11,919 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:713] 2025-10-11 22:04:11,997 >> loading configuration file /home/chenzhidan/deepseek-llm-7b-base/config.json
+[INFO|configuration_utils.py:775] 2025-10-11 22:04:11,997 >> Model config LlamaConfig {
+  "_name_or_path": "/home/chenzhidan/deepseek-llm-7b-base",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 30,
+  "num_key_value_heads": 32,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.34.0",
+  "use_cache": true,
+  "vocab_size": 102400
+}
+
+[INFO|modeling_utils.py:2990] 2025-10-11 22:04:12,008 >> loading weights file /home/chenzhidan/deepseek-llm-7b-base/pytorch_model.bin.index.json
+[INFO|modeling_utils.py:1220] 2025-10-11 22:04:12,008 >> Instantiating LlamaForCausalLM model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:770] 2025-10-11 22:04:12,008 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.36s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.37s/it]
+[INFO|modeling_utils.py:3775] 2025-10-11 22:04:16,829 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+[INFO|modeling_utils.py:3783] 2025-10-11 22:04:16,829 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /home/chenzhidan/deepseek-llm-7b-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:728] 2025-10-11 22:04:16,831 >> loading configuration file /home/chenzhidan/deepseek-llm-7b-base/generation_config.json
+[INFO|configuration_utils.py:770] 2025-10-11 22:04:16,831 >> Generate config GenerationConfig {
+  "bos_token_id": 100000,
+  "eos_token_id": 100001
+}
+
+10/11/2025 22:04:16 - INFO - llmtuner.tuner.core.adapter - Fine-tuning method: LoRA
+10/11/2025 22:04:22 - INFO - llmtuner.tuner.core.adapter - Merged 1 model checkpoint(s).
+10/11/2025 22:04:22 - INFO - llmtuner.tuner.core.adapter - Loaded fine-tuned model from checkpoint(s): /home/chenzhidan/deepseek/checkpoints/ds_sanwen_dynamic
+10/11/2025 22:04:22 - INFO - llmtuner.tuner.core.loader - trainable params: 0 || all params: 6910365696 || trainable%: 0.0000
+10/11/2025 22:04:22 - INFO - llmtuner.tuner.core.loader - This IS expected that the trainable params is 0 if you are using model for inference only.
+[INFO|tokenization_utils_base.py:952] 2025-10-11 22:04:22,346 >> Assigning [] to the additional_special_tokens key of the tokenizer
+Loading cached processed dataset at /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-920dba6a875424f3.arrow
+Loading cached processed dataset at /home/chenzhidan/.cache/huggingface/datasets/json/default-4dd7dcffb9227156/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96/cache-1607898d49f13e37.arrow
+input_ids:
+[100000, 32, 12465, 1439, 245, 13076, 2677, 285, 274, 18050, 15141, 20308, 13, 429, 20308, 4380, 9394, 11, 9333, 11, 285, 30513, 9789, 276, 254, 2677, 6, 82, 4313, 13, 185, 38426, 25, 207, 4575, 6857, 2441, 1506, 8260, 67402, 28486, 13396, 3536, 1557, 7212, 185, 4575, 58, 1147, 60, 2477, 23316, 19304, 20822, 3344, 58, 6750, 81405, 60, 10867, 7977, 28778, 45326, 6698, 17398, 19403, 1147, 2717, 30, 21238, 6750, 81405, 5855, 185, 77398, 25, 207]
+inputs:
+<｜begin▁of▁sentence｜>A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.
+Human: 请根据给定句子和实体抽取其关系
+请[他]解惑，恰见[他的助手]正在纳闷：怎么啦 ([他],?,[他的助手])
+Assistant: 
+[INFO|training_args.py:1345] 2025-10-11 22:04:22,377 >> Found safetensors installation, but --save_safetensors=False. Safetensors should be a preferred weights saving format due to security and performance reasons. If your model cannot be saved by safetensors please feel free to open an issue at https://github.com/huggingface/safetensors!
+[INFO|training_args.py:1798] 2025-10-11 22:04:22,377 >> PyTorch: setting up devices
+[INFO|trainer.py:3213] 2025-10-11 22:04:23,719 >> ***** Running Prediction *****
+[INFO|trainer.py:3215] 2025-10-11 22:04:23,720 >>   Num examples = 100
+[INFO|trainer.py:3218] 2025-10-11 22:04:23,720 >>   Batch size = 1
+[WARNING|logging.py:290] 2025-10-11 22:04:23,721 >> You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[INFO|configuration_utils.py:770] 2025-10-11 22:04:23,728 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+/home/chenzhidan/miniconda/envs/chenzhidan_deepseek/lib/python3.10/site-packages/transformers/generation/utils.py:1421: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+  warnings.warn(
+  0%|          | 0/100 [00:00<?, ?it/s]  2%|▏         | 2/100 [00:00<00:17,  5.56it/s]  3%|▎         | 3/100 [00:00<00:26,  3.69it/s]  4%|▍         | 4/100 [00:01<00:29,  3.29it/s]  5%|▌         | 5/100 [00:01<00:33,  2.87it/s]  6%|▌         | 6/100 [00:01<00:34,  2.73it/s]  7%|▋         | 7/100 [00:02<00:33,  2.75it/s]  8%|▊         | 8/100 [00:02<00:33,  2.75it/s]  9%|▉         | 9/100 [00:03<00:36,  2.52it/s] 10%|█         | 10/100 [00:03<00:41,  2.19it/s] 11%|█         | 11/100 [00:04<00:40,  2.22it/s] 12%|█▏        | 12/100 [00:04<00:37,  2.37it/s] 13%|█▎        | 13/100 [00:05<00:51,  1.70it/s] 14%|█▍        | 14/100 [00:06<00:55,  1.54it/s] 15%|█▌        | 15/100 [00:06<00:54,  1.56it/s] 16%|█▌        | 16/100 [00:07<00:51,  1.63it/s] 17%|█▋        | 17/100 [00:07<00:47,  1.75it/s] 18%|█▊        | 18/100 [00:08<00:46,  1.77it/s] 19%|█▉        | 19/100 [00:09<00:46,  1.75it/s] 20%|██        | 20/100 [00:09<00:50,  1.58it/s] 21%|██        | 21/100 [00:10<00:48,  1.64it/s] 22%|██▏       | 22/100 [00:10<00:43,  1.80it/s] 23%|██▎       | 23/100 [00:11<00:43,  1.76it/s] 24%|██▍       | 24/100 [00:11<00:41,  1.85it/s] 25%|██▌       | 25/100 [00:12<00:40,  1.84it/s] 26%|██▌       | 26/100 [00:12<00:36,  2.00it/s] 27%|██▋       | 27/100 [00:13<00:35,  2.03it/s] 28%|██▊       | 28/100 [00:14<00:39,  1.80it/s] 29%|██▉       | 29/100 [00:14<00:42,  1.67it/s] 30%|███       | 30/100 [00:15<00:42,  1.64it/s] 31%|███       | 31/100 [00:15<00:37,  1.83it/s] 32%|███▏      | 32/100 [00:16<00:38,  1.75it/s] 33%|███▎      | 33/100 [00:16<00:34,  1.93it/s] 34%|███▍      | 34/100 [00:17<00:31,  2.08it/s] 35%|███▌      | 35/100 [00:17<00:29,  2.19it/s] 36%|███▌      | 36/100 [00:17<00:27,  2.34it/s] 37%|███▋      | 37/100 [00:18<00:32,  1.92it/s] 38%|███▊      | 38/100 [00:19<00:33,  1.85it/s] 39%|███▉      | 39/100 [00:19<00:35,  1.73it/s] 40%|████      | 40/100 [00:20<00:32,  1.83it/s] 41%|████      | 41/100 [00:20<00:29,  1.99it/s] 42%|████▏     | 42/100 [00:21<00:27,  2.07it/s] 43%|████▎     | 43/100 [00:21<00:26,  2.13it/s] 44%|████▍     | 44/100 [00:22<00:26,  2.12it/s] 45%|████▌     | 45/100 [00:22<00:26,  2.07it/s] 46%|████▌     | 46/100 [00:23<00:24,  2.18it/s] 47%|████▋     | 47/100 [00:23<00:23,  2.27it/s] 48%|████▊     | 48/100 [00:23<00:22,  2.27it/s] 49%|████▉     | 49/100 [00:24<00:22,  2.28it/s] 50%|█████     | 50/100 [00:24<00:20,  2.41it/s] 51%|█████     | 51/100 [00:25<00:20,  2.44it/s] 52%|█████▏    | 52/100 [00:25<00:21,  2.21it/s] 53%|█████▎    | 53/100 [00:26<00:21,  2.23it/s] 54%|█████▍    | 54/100 [00:26<00:19,  2.36it/s] 55%|█████▌    | 55/100 [00:26<00:18,  2.39it/s] 56%|█████▌    | 56/100 [00:27<00:20,  2.18it/s] 57%|█████▋    | 57/100 [00:27<00:21,  2.04it/s] 58%|█████▊    | 58/100 [00:28<00:20,  2.01it/s] 59%|█████▉    | 59/100 [00:28<00:19,  2.13it/s] 60%|██████    | 60/100 [00:29<00:18,  2.17it/s] 61%|██████    | 61/100 [00:29<00:17,  2.20it/s] 62%|██████▏   | 62/100 [00:30<00:16,  2.29it/s] 63%|██████▎   | 63/100 [00:30<00:15,  2.35it/s] 64%|██████▍   | 64/100 [00:30<00:15,  2.40it/s] 65%|██████▌   | 65/100 [00:31<00:14,  2.43it/s] 66%|██████▌   | 66/100 [00:31<00:14,  2.39it/s] 67%|██████▋   | 67/100 [00:32<00:13,  2.50it/s] 68%|██████▊   | 68/100 [00:32<00:13,  2.36it/s] 69%|██████▉   | 69/100 [00:33<00:12,  2.47it/s] 70%|███████   | 70/100 [00:33<00:13,  2.28it/s] 71%|███████   | 71/100 [00:33<00:12,  2.28it/s] 72%|███████▏  | 72/100 [00:34<00:13,  2.06it/s] 73%|███████▎  | 73/100 [00:35<00:14,  1.85it/s] 74%|███████▍  | 74/100 [00:35<00:13,  1.91it/s] 75%|███████▌  | 75/100 [00:36<00:13,  1.84it/s] 76%|███████▌  | 76/100 [00:36<00:12,  1.95it/s] 77%|███████▋  | 77/100 [00:37<00:11,  2.04it/s] 78%|███████▊  | 78/100 [00:37<00:10,  2.17it/s] 79%|███████▉  | 79/100 [00:38<00:10,  1.91it/s] 80%|████████  | 80/100 [00:38<00:11,  1.76it/s] 81%|████████  | 81/100 [00:39<00:11,  1.70it/s] 82%|████████▏ | 82/100 [00:40<00:11,  1.63it/s] 83%|████████▎ | 83/100 [00:41<00:13,  1.28it/s] 84%|████████▍ | 84/100 [00:42<00:11,  1.34it/s] 85%|████████▌ | 85/100 [00:42<00:10,  1.50it/s] 86%|████████▌ | 86/100 [00:43<00:09,  1.55it/s] 87%|████████▋ | 87/100 [00:43<00:08,  1.62it/s] 88%|████████▊ | 88/100 [00:44<00:07,  1.64it/s] 89%|████████▉ | 89/100 [00:44<00:06,  1.62it/s] 90%|█████████ | 90/100 [00:45<00:06,  1.64it/s] 91%|█████████ | 91/100 [00:45<00:05,  1.75it/s] 92%|█████████▏| 92/100 [00:46<00:04,  1.88it/s] 93%|█████████▎| 93/100 [00:46<00:03,  1.98it/s] 94%|█████████▍| 94/100 [00:47<00:03,  1.76it/s] 95%|█████████▌| 95/100 [00:47<00:02,  1.94it/s] 96%|█████████▌| 96/100 [00:48<00:02,  1.89it/s] 97%|█████████▋| 97/100 [00:49<00:01,  1.86it/s] 98%|█████████▊| 98/100 [00:49<00:01,  1.80it/s] 99%|█████████▉| 99/100 [00:50<00:00,  1.88it/s]100%|██████████| 100/100 [00:50<00:00,  2.08it/s]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.368 seconds.
+Prefix dict has been built successfully.
+100%|██████████| 100/100 [00:50<00:00,  1.96it/s]
+***** predict metrics *****
+  predict_bleu-4             =    93.9964
+  predict_rouge-1            =    98.3825
+  predict_rouge-2            =    97.5406
+  predict_rouge-l            =    98.4557
+  predict_runtime            = 0:00:51.54
+  predict_samples_per_second =       1.94
+  predict_steps_per_second   =       1.94
+10/11/2025 22:05:15 - INFO - llmtuner.tuner.sft.trainer - Saving prediction results to /home/chenzhidan/deepseek/results/ds_sanwen_dynamic/generated_predictions.jsonl

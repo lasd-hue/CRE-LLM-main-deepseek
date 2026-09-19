@@ -1,0 +1,92 @@
+{
+  "FinRE_train": {
+    "file_name": "FinRE/train.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "FinRE_valid": {
+    "file_name": "FinRE/valid.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "FinRE_test": {
+    "file_name": "FinRE/test.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "SanWen_train": {
+    "file_name": "SanWen/train.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "SanWen_valid": {
+    "file_name": "SanWen/valid.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "SanWen_test": {
+    "file_name": "SanWen/test.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "finre_dynamic_fixed_v2": {
+    "file_name": "FinRE/train_dynamic_fixed_v2.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "sanwen_dynamic_fixed_v2": {
+    "file_name": "SanWen/train_dynamic_fixed_v2.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "sanwen_with_negatives": {
+    "file_name": "SanWen/train_dynamic_fixed_v2_with_negatives.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  },
+  "finre_with_negatives": {
+    "file_name": "FinRE/train_dynamic_fixed_v2_with_negatives.json", 
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": ""
+    }
+  }
+}
